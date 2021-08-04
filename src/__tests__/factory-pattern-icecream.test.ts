@@ -1,4 +1,4 @@
-import {ChocoCart,StrawberryCart} from "../patterns/factory/factory-icecream";
+import {ChocoCart,StrawberryCart,ButterscotchCart} from "../patterns/factory/factory-icecream";
 import {getIcecream} from "../pages/hello-factory/prouct-provider"
 
 describe("Icecream Factory", () => {
@@ -12,4 +12,9 @@ describe("Icecream Factory", () => {
         let reality=new StrawberryCart()
         expect(expectation).toEqual(reality.getIcecream())
     })
+    test("Butterscotch", () => {
+        let here = getIcecream("Buttery Butterscotch");
+        let getting = new ButterscotchCart();
+        expect(here).toEqual(getting.getIcecream());
+    });
 })
